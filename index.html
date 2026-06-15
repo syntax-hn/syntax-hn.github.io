@@ -552,8 +552,9 @@
       .prev-feats { grid-template-columns:1fr 1fr; }
       .prev-modal { border-radius:14px; }
       .prev-title { font-size:17px; }
-      .prev-tabs { overflow-x:auto; flex-wrap:nowrap; padding-bottom:2px; gap:2px; }
-      .prev-tab { white-space:nowrap; font-size:12px; padding:7px 12px; }
+      .prev-tabs { display:grid; grid-template-columns:1fr 1fr; gap:6px; padding:12px 16px 0; overflow:visible; }
+      .prev-tab { border-radius:8px !important; border:1px solid rgba(255,255,255,.08) !important; font-size:12px; padding:8px 6px; text-align:center; white-space:nowrap; }
+      .prev-tab.active { border-color:rgba(6,182,212,.3) !important; }
       .laptop-cam, .laptop-base, .laptop-foot { display:none; }
       .laptop-frame { border-radius:10px; border-width:1px; }
       .laptop-screen { height:auto !important; }
