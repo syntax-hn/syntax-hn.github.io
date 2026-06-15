@@ -394,6 +394,168 @@
     }
     .port-soon-ico { font-size:52px; }
     .port-soon-txt { font-family:var(--fh); font-size:16px; color:var(--muted); }
+    .port-chip--dev { background:#d97706; display:inline-flex; align-items:center; gap:6px; }
+    .chip-dot { width:7px; height:7px; border-radius:50%; background:#fff; animation:pulse 1.5s infinite; flex-shrink:0; }
+    .btn-preview {
+      background:rgba(6,182,212,.1); color:#06b6d4;
+      border:1px solid rgba(6,182,212,.25); border-radius:8px;
+      padding:7px 16px; font-size:12px; font-weight:600;
+      cursor:pointer; font-family:var(--f); transition:all .25s; margin-top:14px; display:inline-block;
+    }
+    .btn-preview:hover { background:rgba(6,182,212,.2); transform:translateY(-1px); }
+
+    /* ─── PREVIEW MODAL ─── */
+    .prev-overlay {
+      display:none; position:fixed; inset:0; z-index:500;
+      background:rgba(5,10,20,.94); backdrop-filter:blur(14px);
+      align-items:center; justify-content:center; padding:20px;
+    }
+    .prev-overlay.open { display:flex; }
+    .prev-modal {
+      background:#0f1e35; border:1px solid rgba(255,255,255,.1);
+      border-radius:20px; width:100%; max-width:960px;
+      max-height:92vh; overflow-y:auto;
+      box-shadow:0 40px 100px rgba(0,0,0,.7);
+      animation:fadeUp .4s var(--ease);
+      position:relative;
+    }
+    .prev-close {
+      position:absolute; top:16px; right:18px;
+      background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12);
+      border-radius:8px; color:#8899b5; font-size:15px;
+      width:32px; height:32px; cursor:pointer;
+      display:flex; align-items:center; justify-content:center; transition:all .2s; z-index:10;
+    }
+    .prev-close:hover { background:rgba(255,255,255,.16); color:#fff; }
+    .prev-head { padding:26px 32px 18px; border-bottom:1px solid rgba(255,255,255,.07); }
+    .prev-title {
+      font-family:var(--fh); font-size:21px; font-weight:700; color:#fff;
+      margin-bottom:5px; display:flex; align-items:center; gap:11px;
+    }
+    .prev-badge {
+      font-size:9px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
+      padding:3px 10px; border-radius:100px;
+      background:rgba(217,119,6,.18); color:#d97706; border:1px solid rgba(217,119,6,.3);
+    }
+    .prev-sub { font-size:13px; color:#8899b5; }
+    .prev-tabs { display:flex; gap:3px; padding:18px 32px 0; }
+    .prev-tab {
+      background:none; border:none; padding:8px 18px;
+      font-family:var(--f); font-size:13px; font-weight:500; color:#8899b5;
+      cursor:pointer; border-radius:8px 8px 0 0;
+      border:1px solid transparent; border-bottom:none; transition:all .2s;
+    }
+    .prev-tab:hover { color:#e2e8f0; background:rgba(255,255,255,.04); }
+    .prev-tab.active { color:#06b6d4; background:rgba(6,182,212,.08); border-color:rgba(6,182,212,.2); }
+    .prev-screen { display:none; padding:20px 32px 16px; }
+    .prev-screen.active { display:flex; justify-content:center; }
+
+    /* Laptop frame */
+    .laptop-wrap { display:flex; flex-direction:column; align-items:center; width:100%; }
+    .laptop-frame {
+      width:100%; max-width:660px; background:#1a2535;
+      border:2px solid #2a3a54; border-radius:12px 12px 0 0; overflow:hidden;
+      box-shadow:0 0 0 1px rgba(255,255,255,.04), 0 20px 60px rgba(0,0,0,.5);
+    }
+    .laptop-cam { height:20px; background:#1a2535; display:flex; align-items:center; justify-content:center; }
+    .laptop-cam-dot { width:5px; height:5px; border-radius:50%; background:#2a3a54; }
+    .laptop-screen { background:#0d1117; height:340px; overflow:hidden; }
+    .laptop-base { height:12px; background:linear-gradient(to bottom,#1e2d42,#162030); border-top:1px solid #2a3a54; }
+    .laptop-foot { width:calc(100% + 2px); max-width:700px; height:9px; background:#0c1520; border-radius:0 0 6px 6px; border:1px solid #1a2535; border-top:none; }
+
+    /* Phone frame */
+    .phone-frame { width:196px; background:#1a2535; border:2px solid #2a3a54; border-radius:28px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.55); }
+    .phone-notch { height:18px; background:#1a2535; display:flex; align-items:center; justify-content:center; }
+    .phone-notch-bar { width:48px; height:5px; background:#0d1117; border-radius:3px; }
+    .phone-screen { background:#111318; height:374px; overflow:hidden; }
+    .phone-home { height:14px; background:#1a2535; display:flex; align-items:center; justify-content:center; }
+    .phone-home-bar { width:48px; height:3px; background:#2a3a54; border-radius:2px; }
+
+    /* POS Mockup — shared */
+    .pos-m { width:100%; height:100%; display:flex; flex-direction:column; font-family:var(--f); background:#111318; overflow:hidden; }
+    .pos-m-nav { height:26px; background:#18181b; border-bottom:1px solid #27272a; display:flex; align-items:center; padding:0 10px; gap:8px; flex-shrink:0; }
+    .pos-m-logo { font-size:9px; font-weight:700; color:#06b6d4; letter-spacing:.5px; }
+    .pos-m-status { font-size:7px; color:#4ade80; margin-left:auto; display:flex; align-items:center; gap:3px; }
+    .pos-m-status-dot { width:5px; height:5px; border-radius:50%; background:#4ade80; }
+    .pos-m-bar { padding:5px 10px; flex-shrink:0; }
+    .pos-m-bar-inner { background:#1e1e24; border:1px solid #2a2a35; border-radius:6px; height:18px; display:flex; align-items:center; padding:0 7px; gap:4px; }
+    .pos-m-bar-ico { font-size:7px; color:#444; }
+    .pos-m-bar-txt { font-size:7px; color:#444; }
+    .pos-m-cats { padding:0 10px 5px; display:flex; gap:4px; flex-shrink:0; overflow:hidden; }
+    .pos-m-cat { font-size:6px; font-weight:600; padding:2px 7px; border-radius:100px; background:#1e1e24; color:#555; border:1px solid #2a2a35; white-space:nowrap; }
+    .pos-m-cat.a { background:#1a2d5c; color:#06b6d4; border-color:rgba(6,182,212,.3); }
+    .pos-m-grid { flex:1; padding:0 10px 8px; display:grid; grid-template-columns:repeat(3,1fr); gap:5px; overflow:hidden; }
+    .pos-m-card { background:#18181b; border:1px solid #27272a; border-radius:6px; overflow:hidden; cursor:pointer; }
+    .pos-m-card-h { background:#1a2d5c; padding:3px 6px; display:flex; align-items:center; justify-content:space-between; }
+    .pos-m-card-cat { font-size:6px; color:rgba(255,255,255,.55); }
+    .pos-m-card-isv { font-size:5px; background:rgba(6,182,212,.15); color:#06b6d4; padding:1px 3px; border-radius:2px; }
+    .pos-m-card-b { padding:5px 6px; }
+    .pos-m-card-name { font-size:7px; color:#e2e8f0; font-weight:500; margin-bottom:3px; line-height:1.2; }
+    .pos-m-card-price { font-size:9px; color:#06b6d4; font-weight:700; }
+    .pos-m-card-stock { font-size:6px; color:#555; margin-top:2px; display:flex; align-items:center; gap:3px; }
+    .pos-m-card-dot { width:4px; height:4px; border-radius:50%; background:#4ade80; flex-shrink:0; }
+
+    /* POS Mockup — venta split */
+    .pos-m-split { display:flex; flex:1; overflow:hidden; }
+    .pos-m-left { flex:1; display:flex; flex-direction:column; overflow:hidden; }
+    .pos-m-right { width:155px; background:#18181b; border-left:1px solid #27272a; display:flex; flex-direction:column; flex-shrink:0; }
+    .pos-m-rh { padding:5px 8px; border-bottom:1px solid #27272a; }
+    .pos-m-client { background:#222; border:1px solid #333; border-radius:4px; height:15px; display:flex; align-items:center; padding:0 5px; font-size:6px; color:#444; }
+    .pos-m-grid2 { padding:5px 8px; display:grid; grid-template-columns:repeat(2,1fr); gap:4px; overflow:hidden; }
+    .pos-m-items { flex:1; padding:5px 8px; display:flex; flex-direction:column; gap:5px; overflow:hidden; }
+    .pos-m-item { display:flex; justify-content:space-between; align-items:flex-start; }
+    .pos-m-iname { font-size:7px; color:#ccc; }
+    .pos-m-iqty { font-size:6px; color:#555; }
+    .pos-m-iprice { font-size:7px; color:#06b6d4; font-weight:600; }
+    .pos-m-totals { border-top:1px solid #27272a; padding:5px 8px; display:flex; flex-direction:column; gap:3px; }
+    .pos-m-trow { display:flex; justify-content:space-between; }
+    .pos-m-tlbl { font-size:7px; color:#666; }
+    .pos-m-tval { font-size:7px; color:#ccc; }
+    .pos-m-trow.big .pos-m-tlbl { font-size:8px; color:#fff; font-weight:600; }
+    .pos-m-trow.big .pos-m-tval { font-size:9px; color:#C4622D; font-weight:700; }
+    .pos-m-pay { padding:5px 8px; border-top:1px solid #27272a; display:flex; gap:3px; flex-wrap:wrap; }
+    .pos-m-pbtn { font-size:6px; padding:2px 6px; border-radius:4px; background:#222; color:#777; border:1px solid #333; }
+    .pos-m-pbtn.a { background:rgba(45,62,109,.4); color:#06b6d4; border-color:rgba(6,182,212,.3); }
+    .pos-m-cta { margin:5px 8px 6px; background:#C4622D; border-radius:4px; height:20px; display:flex; align-items:center; justify-content:center; font-size:7px; color:#fff; font-weight:700; }
+
+    /* POS Mockup — mobile */
+    .pos-mob { width:100%; height:100%; display:flex; flex-direction:column; background:#111318; font-family:var(--f); position:relative; overflow:hidden; }
+    .pos-mob-nav { height:22px; background:#18181b; border-bottom:1px solid #27272a; display:flex; align-items:center; padding:0 8px; flex-shrink:0; }
+    .pos-mob-title { font-size:8px; font-weight:700; color:#06b6d4; }
+    .pos-mob-cats { padding:5px 8px 3px; display:flex; gap:3px; flex-shrink:0; overflow:hidden; }
+    .pos-mob-cat { font-size:6px; font-weight:600; padding:2px 7px; border-radius:100px; background:#1e1e24; color:#555; border:1px solid #2a2a35; }
+    .pos-mob-cat.a { background:#1a2d5c; color:#06b6d4; border-color:rgba(6,182,212,.3); }
+    .pos-mob-grid { flex:1; padding:0 8px; display:grid; grid-template-columns:repeat(2,1fr); gap:4px; overflow:hidden; }
+    .pos-mob-card { background:#18181b; border:1px solid #27272a; border-radius:5px; overflow:hidden; }
+    .pos-mob-ch { background:#1a2d5c; padding:2px 5px; font-size:6px; color:rgba(255,255,255,.55); }
+    .pos-mob-cb { padding:4px 5px; }
+    .pos-mob-cname { font-size:7px; color:#e2e8f0; margin-bottom:2px; line-height:1.2; }
+    .pos-mob-cprice { font-size:8px; color:#06b6d4; font-weight:700; }
+    .pos-mob-fab { position:absolute; bottom:10px; right:8px; background:#C4622D; border-radius:20px; height:26px; padding:0 10px; display:flex; align-items:center; gap:5px; box-shadow:0 4px 14px rgba(196,98,45,.55); }
+    .pos-mob-fabi { font-size:10px; }
+    .pos-mob-fabt { font-size:8px; color:#fff; font-weight:700; }
+    .pos-mob-fabn { background:#fff; color:#C4622D; border-radius:100px; font-size:6px; font-weight:800; padding:1px 4px; }
+
+    /* Feature grid */
+    .prev-feats { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; padding:0 32px 18px; }
+    .prev-feat { background:rgba(6,182,212,.05); border:1px solid rgba(6,182,212,.14); border-radius:10px; padding:12px 14px; display:flex; align-items:flex-start; gap:9px; }
+    .prev-feat-ico { font-size:16px; flex-shrink:0; margin-top:1px; }
+    .prev-feat-txt { font-size:12px; color:#8899b5; line-height:1.5; }
+    .prev-feat-txt strong { display:block; color:#e2e8f0; font-size:12px; margin-bottom:2px; }
+    .prev-cta-wrap { padding:0 32px 26px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; border-top:1px solid rgba(255,255,255,.06); padding-top:18px; }
+    .prev-cta-note { font-size:12px; color:#8899b5; }
+    .prev-cta-btn { background:#C4622D; color:#fff; border:none; border-radius:10px; padding:11px 26px; font-size:14px; font-weight:600; cursor:pointer; font-family:var(--f); transition:all .3s; }
+    .prev-cta-btn:hover { background:#a33b23; transform:translateY(-1px); box-shadow:0 8px 24px rgba(196,98,45,.35); }
+
+    @media (max-width:600px) {
+      .prev-head, .prev-tabs, .prev-screen, .prev-feats, .prev-cta-wrap { padding-left:16px; padding-right:16px; }
+      .prev-feats { grid-template-columns:1fr 1fr; }
+      .prev-modal { border-radius:14px; }
+      .prev-title { font-size:17px; }
+    }
+    @media (max-width:420px) {
+      .prev-feats { grid-template-columns:1fr; }
+    }
 
     /* ─── ABOUT STRIP ─── */
     .about { background:var(--navy); padding:80px 0; border-top:1px solid rgba(255,255,255,.07); border-bottom:1px solid rgba(255,255,255,.07); }
@@ -528,9 +690,10 @@
       </div>
     </a>
     <div class="nav-links">
-      <a href="#servicios" data-i18n="nav.services">Servicios</a>
-      <a href="#proceso"   data-i18n="nav.process">Proceso</a>
-      <a href="#contacto"  data-i18n="nav.contact">Contacto</a>
+      <a href="#servicios"  data-i18n="nav.services">Servicios</a>
+      <a href="#proceso"    data-i18n="nav.process">Proceso</a>
+      <a href="#portafolio" data-i18n="nav.portfolio">Portafolio</a>
+      <a href="#contacto"   data-i18n="nav.contact">Contacto</a>
     </div>
     <div class="nav-right">
       <button class="btn-lang" id="btnLang">
@@ -552,6 +715,7 @@
   <button class="btn-close" id="btnClose">✕</button>
   <a href="#servicios"  data-i18n="nav.services"  onclick="closeMenu()">Servicios</a>
   <a href="#proceso"    data-i18n="nav.process"   onclick="closeMenu()">Proceso</a>
+  <a href="#portafolio" data-i18n="nav.portfolio" onclick="closeMenu()">Portafolio</a>
   <a href="#contacto"   data-i18n="nav.contact"   onclick="closeMenu()">Contacto</a>
   <button class="btn-lang" id="btnLangM" style="margin-top:8px">
     <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -632,7 +796,7 @@
 </section>
 
 <!-- ═══ PORTFOLIO ═══ -->
-<section class="portfolio" id="portafolio" style="display:none">
+<section class="portfolio" id="portafolio">
   <div class="container">
     <div class="sec-head reveal" style="text-align:center">
       <div class="tag-label" data-i18n="port.tag">Nuestro trabajo</div>
@@ -771,11 +935,117 @@
         </a>
       </div>
     </div>
-    <p class="footer-copy" data-i18n-html="footer.copy">
-      © 2025 <span class="acc">Syntax System Development</span>. Hecho con código en Honduras.
+    <p class="footer-copy">
+      <span data-i18n-html="footer.copy">© 2025 <span class="acc">Syntax System Development</span>. Hecho en Honduras</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 20" width="24" height="16" style="display:inline-block;vertical-align:middle;border-radius:2px;margin-left:6px;box-shadow:0 1px 3px rgba(0,0,0,.4);"><rect width="30" height="20" fill="#0073CF"/><rect y="6.67" width="30" height="6.67" fill="#fff"/><polygon transform="translate(15,10)" points="0,-1.5 0.353,-0.485 1.427,-0.463 0.571,0.185 0.882,1.213 0,0.6 -0.882,1.213 -0.571,0.185 -1.427,-0.463 -0.353,-0.485" fill="#0073CF"/><polygon transform="translate(10.5,8.5)" points="0,-1.5 0.353,-0.485 1.427,-0.463 0.571,0.185 0.882,1.213 0,0.6 -0.882,1.213 -0.571,0.185 -1.427,-0.463 -0.353,-0.485" fill="#0073CF"/><polygon transform="translate(19.5,8.5)" points="0,-1.5 0.353,-0.485 1.427,-0.463 0.571,0.185 0.882,1.213 0,0.6 -0.882,1.213 -0.571,0.185 -1.427,-0.463 -0.353,-0.485" fill="#0073CF"/><polygon transform="translate(10.5,11.5)" points="0,-1.5 0.353,-0.485 1.427,-0.463 0.571,0.185 0.882,1.213 0,0.6 -0.882,1.213 -0.571,0.185 -1.427,-0.463 -0.353,-0.485" fill="#0073CF"/><polygon transform="translate(19.5,11.5)" points="0,-1.5 0.353,-0.485 1.427,-0.463 0.571,0.185 0.882,1.213 0,0.6 -0.882,1.213 -0.571,0.185 -1.427,-0.463 -0.353,-0.485" fill="#0073CF"/></svg>
     </p>
   </div>
 </footer>
+
+<!-- ═══ POS PREVIEW MODAL ═══ -->
+<div class="prev-overlay" id="prevModal">
+  <div class="prev-modal">
+    <button class="prev-close" id="prevClose">✕</button>
+    <div class="prev-head">
+      <div class="prev-title">Syntax POS <span class="prev-badge">Preview</span></div>
+      <div class="prev-sub">Sistema de punto de venta offline-first para negocios en Honduras</div>
+    </div>
+    <div class="prev-tabs">
+      <button class="prev-tab active" data-tab="0">🔐 Login</button>
+      <button class="prev-tab" data-tab="1">🗂 Catálogo</button>
+      <button class="prev-tab" data-tab="2">🛒 Proceso de venta</button>
+      <button class="prev-tab" data-tab="3">📱 Vista móvil</button>
+    </div>
+
+    <!-- Tab 0: Login -->
+    <div class="prev-screen active" id="pscr0">
+      <div class="laptop-wrap">
+        <div class="laptop-frame">
+          <div class="laptop-cam"><div class="laptop-cam-dot"></div></div>
+          <div class="laptop-screen" style="height:340px;">
+            <video src="login.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;"></video>
+          </div>
+          <div class="laptop-base"></div>
+        </div>
+        <div class="laptop-foot"></div>
+      </div>
+    </div>
+
+    <!-- Tab 1: Catálogo -->
+    <div class="prev-screen" id="pscr1">
+      <div class="laptop-wrap">
+        <div class="laptop-frame">
+          <div class="laptop-cam"><div class="laptop-cam-dot"></div></div>
+          <div class="laptop-screen">
+            <img src="catalogo.png" alt="Syntax POS — Catálogo de productos" style="width:100%;height:100%;object-fit:cover;object-position:top left;display:block;" />
+          </div>
+          <div class="laptop-base"></div>
+        </div>
+        <div class="laptop-foot"></div>
+      </div>
+    </div>
+
+    <!-- Tab 2: Proceso de venta -->
+    <div class="prev-screen" id="pscr2">
+      <div class="laptop-wrap">
+        <div class="laptop-frame">
+          <div class="laptop-cam"><div class="laptop-cam-dot"></div></div>
+          <div class="laptop-screen">
+            <img src="venta.png" alt="Syntax POS — Proceso de venta" style="width:100%;height:100%;object-fit:cover;object-position:top left;display:block;" />
+          </div>
+          <div class="laptop-base"></div>
+        </div>
+        <div class="laptop-foot"></div>
+      </div>
+    </div>
+
+    <!-- Tab 3: Vista móvil -->
+    <div class="prev-screen" id="pscr3">
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+          <div class="phone-frame">
+            <div class="phone-notch"><div class="phone-notch-bar"></div></div>
+            <div class="phone-screen">
+              <img src="movil.png" alt="Syntax POS móvil — catálogo" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;" />
+            </div>
+            <div class="phone-home"><div class="phone-home-bar"></div></div>
+          </div>
+          <div style="font-size:11px;color:#8899b5;text-align:center;">Catálogo + FAB</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+          <div class="phone-frame">
+            <div class="phone-notch"><div class="phone-notch-bar"></div></div>
+            <div class="phone-screen">
+              <img src="movil2.png" alt="Syntax POS móvil — carrito" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;" />
+            </div>
+            <div class="phone-home"><div class="phone-home-bar"></div></div>
+          </div>
+          <div style="font-size:11px;color:#8899b5;text-align:center;">Carrito abierto</div>
+        </div>
+        <div style="max-width:200px;">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;color:#e2e8f0;margin-bottom:10px;line-height:1.3;">Funciona en cualquier celular</div>
+          <p style="font-size:12px;color:#8899b5;line-height:1.8;margin-bottom:10px;">Sin app que instalar. Tu cajero abre el navegador y ya puede vender.</p>
+          <p style="font-size:12px;color:#8899b5;line-height:1.8;">Un toque en el botón azul y se abre el panel de cobro completo.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features -->
+    <div class="prev-feats">
+      <div class="prev-feat"><span class="prev-feat-ico">📶</span><div class="prev-feat-txt"><strong>Modo offline</strong>Vende aunque se vaya el internet. Sincroniza al reconectar.</div></div>
+      <div class="prev-feat"><span class="prev-feat-ico">🧾</span><div class="prev-feat-txt"><strong>Ticket térmico</strong>Imprime en impresoras de 80mm sin configuración extra.</div></div>
+      <div class="prev-feat"><span class="prev-feat-ico">📱</span><div class="prev-feat-txt"><strong>Sin app que instalar</strong>Funciona desde el navegador en celular, tablet o computadora.</div></div>
+      <div class="prev-feat"><span class="prev-feat-ico">🏪</span><div class="prev-feat-txt"><strong>Multi-negocio SaaS</strong>Un sistema para múltiples sucursales. Datos 100% separados.</div></div>
+      <div class="prev-feat"><span class="prev-feat-ico">🇭🇳</span><div class="prev-feat-txt"><strong>Hecho para Honduras</strong>Lempiras, ISV 15%/18%, preparado para facturación SAR.</div></div>
+      <div class="prev-feat"><span class="prev-feat-ico">📦</span><div class="prev-feat-txt"><strong>Inventario integrado</strong>Stock se descuenta en tiempo real con cada venta.</div></div>
+    </div>
+
+    <!-- CTA -->
+    <div class="prev-cta-wrap">
+      <div class="prev-cta-note">Lanzamiento próximo</div>
+      <button class="prev-cta-btn" onclick="goPosContact()">Me interesa — Contactar →</button>
+    </div>
+  </div>
+</div>
 
 <!-- ═══ WA FLOAT ═══ -->
 <a class="wa-float" href="https://wa.me/50488760372" target="_blank" aria-label="WhatsApp">
@@ -811,9 +1081,9 @@ const T = {
     'proc.tag':      'Cómo trabajamos',
     'proc.title':    'Del concepto<br>a la realidad',
     'proc.sub':      'Un proceso claro y transparente en cada proyecto.',
-    'port.tag':      'Nuestro trabajo',
-    'port.title':    'Proyectos que<br>hablan por sí solos',
-    'port.sub':      'Software real, para empresas reales.',
+    'port.tag':      'Próximamente',
+    'port.title':    'Lo que estamos<br>construyendo',
+    'port.sub':      'Sistemas reales, en desarrollo activo.',
     'about.title':   'Código limpio.<br>Resultados reales.',
     'about.p':       'Somos desarrolladores apasionados con base en Honduras. Combinamos arquitectura sólida con interfaces modernas para entregar sistemas que las empresas usan de verdad, no que acumulan polvo.',
     'about.n1':'Modernas',  'about.l1':'Tecnologías',
@@ -838,10 +1108,10 @@ const T = {
     'form.msg.ph':   'Describe brevemente qué necesitas...',
     'form.submit':   'Enviar mensaje →',
     'form.note':     'Te respondemos en menos de 24 horas.',
-    'footer.copy':   '© 2025 <span class="acc">Syntax System Development</span>. Hecho con código en Honduras.',
+    'footer.copy':   '© 2025 <span class="acc">Syntax System Development</span>. Hecho en Honduras',
     'port.soon':     'Próximamente',
     tw: ['que transforma negocios.', 'hecho a tu medida.', 'que escala contigo.', 'que realmente funciona.'],
-    srvOpts: ['Selecciona un servicio','Sistema a medida','Aplicación web','Base de datos','Consultoría TI','Otro'],
+    srvOpts: ['Selecciona un servicio','Sistema a medida','Aplicación web','Base de datos','Consultoría TI','Sistema POS','Otro'],
     services: [
       { name:'Sistemas a Medida',       desc:'Desarrollamos sistemas de control, ERP y módulos específicos diseñados exactamente para tu negocio.',      tags:['A tu medida','Escalable'],          ico:'monitor'   },
       { name:'Desarrollo Web',          desc:'Aplicaciones web modernas, dashboards interactivos y portales adaptados al flujo real de tu empresa.',       tags:['Moderno','Eficiente'],              ico:'globe'     },
@@ -856,7 +1126,8 @@ const T = {
       { n:'04', t:'Entrega',     d:'Despliegue, capacitación y soporte post-lanzamiento. No te abandonamos al entregar.' }
     ],
     portfolio: [
-      { cat:'Sistema de gestión empresarial', name:'Cimienta', desc:'Sistema completo de control para empresa de materiales de construcción: ventas, préstamos, costos, maquinaria y reportes.', stack:['Laravel','Vue 3','PostgreSQL','Docker'], emoji:'🏗️', chip:'Honduras' }
+      // { cat:'Sistema de gestión empresarial', name:'Cimienta', desc:'Sistema completo de control para empresa de materiales de construcción: ventas, préstamos, costos, maquinaria y reportes.', stack:['Laravel','Vue 3','PostgreSQL','Docker'], emoji:'🏗️', chip:'Honduras' },
+      { cat:'Sistema POS SaaS · Punto de venta', name:'Syntax POS', desc:'Sistema de punto de venta multi-negocio con modo offline. Funciona sin internet, sincroniza automáticamente al reconectar y se adapta a cualquier pantalla.', stack:['Tiendas','Ferreterías','Supermercados','Abarroterías','Repuestos'], icon:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="#18181B"/><rect x="9" y="9" width="9" height="9" rx="2.5" fill="#06B6D4"/><rect x="22" y="9" width="9" height="9" rx="2.5" fill="rgba(255,255,255,0.20)"/><rect x="9" y="22" width="9" height="9" rx="2.5" fill="rgba(255,255,255,0.12)"/><rect x="22" y="22" width="9" height="9" rx="2.5" fill="#06B6D4" opacity="0.5"/></svg>', chip:'Próximamente', chipClass:'dev', preview:true }
     ]
   },
   en: {
@@ -881,9 +1152,9 @@ const T = {
     'proc.tag':      'How we work',
     'proc.title':    'From concept<br>to reality',
     'proc.sub':      'A clear and transparent process for every project.',
-    'port.tag':      'Our work',
-    'port.title':    'Projects that<br>speak for themselves',
-    'port.sub':      'Real software, for real businesses.',
+    'port.tag':      'Coming soon',
+    'port.title':    'What we are<br>building',
+    'port.sub':      'Real systems, in active development.',
     'about.title':   'Clean code.<br>Real results.',
     'about.p':       'We are passionate developers based in Honduras. We combine solid architecture with modern interfaces to deliver systems businesses actually use — not ones that gather dust.',
     'about.n1':'Modern',    'about.l1':'Technologies',
@@ -908,10 +1179,10 @@ const T = {
     'form.msg.ph':   'Briefly describe what you need...',
     'form.submit':   'Send message →',
     'form.note':     "We'll reply within 24 hours.",
-    'footer.copy':   '© 2025 <span class="acc">Syntax System Development</span>. Built with code in Honduras.',
+    'footer.copy':   '© 2025 <span class="acc">Syntax System Development</span>. Made in Honduras',
     'port.soon':     'Coming soon',
     tw: ['that transforms businesses.', 'built just for you.', 'that scales with you.', 'that actually works.'],
-    srvOpts: ['Select a service','Custom system','Web application','Database design','IT consulting','Other'],
+    srvOpts: ['Select a service','Custom system','Web application','Database design','IT consulting','POS System','Other'],
     services: [
       { name:'Custom Systems',          desc:'We build control systems, ERPs and specific modules designed exactly for your business needs.',                tags:['Tailored','Scalable'],               ico:'monitor'   },
       { name:'Web Development',         desc:'Modern web applications, interactive dashboards and portals adapted to your company\'s real workflow.',        tags:['Modern','Efficient'],               ico:'globe'     },
@@ -926,7 +1197,8 @@ const T = {
       { n:'04', t:'Delivery',     d:"Deployment, training and post-launch support. We don't abandon you after handoff." }
     ],
     portfolio: [
-      { cat:'Business management system', name:'Cimienta', desc:'Complete control system for a construction materials company: sales, loans, costs, machinery and reports.', stack:['Laravel','Vue 3','PostgreSQL','Docker'], emoji:'🏗️', chip:'Honduras' }
+      // { cat:'Business management system', name:'Cimienta', desc:'Complete control system for a construction materials company: sales, loans, costs, machinery and reports.', stack:['Laravel','Vue 3','PostgreSQL','Docker'], emoji:'🏗️', chip:'Honduras' },
+      { cat:'SaaS POS System · Point of sale', name:'Syntax POS', desc:'Multi-tenant point of sale system with offline mode. Works without internet, syncs automatically on reconnect and adapts to any screen.', stack:['Retail stores','Hardware stores','Supermarkets','Grocery stores','Auto parts'], icon:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="#18181B"/><rect x="9" y="9" width="9" height="9" rx="2.5" fill="#06B6D4"/><rect x="22" y="9" width="9" height="9" rx="2.5" fill="rgba(255,255,255,0.20)"/><rect x="9" y="22" width="9" height="9" rx="2.5" fill="rgba(255,255,255,0.12)"/><rect x="22" y="22" width="9" height="9" rx="2.5" fill="#06B6D4" opacity="0.5"/></svg>', chip:'Coming soon', chipClass:'dev', preview:true }
     ]
   }
 };
@@ -1041,21 +1313,28 @@ function renderProcess() {
 function renderPortfolio() {
   const grid = document.getElementById('portGrid');
   const soon = T[lang]['port.soon'];
-  grid.innerHTML = T[lang].portfolio.map((p, i) => `
-    <div class="port-card reveal d${i+1}">
-      <div class="port-prev">
-        <span>${p.emoji}</span>
-        <div class="port-prev-overlay"><span class="port-chip">${p.chip}</span></div>
-      </div>
-      <div class="port-body">
-        <div class="port-cat">${p.cat}</div>
-        <div class="port-name">${p.name}</div>
-        <p class="port-desc">${p.desc}</p>
-        <div class="port-stack">${p.stack.map(s => `<span class="stack-pill">${s}</span>`).join('')}</div>
-      </div>
-    </div>
-  `).join('') + `
-    <div class="port-card reveal d2"><div class="port-soon"><div class="port-soon-ico">⚙️</div><div class="port-soon-txt">${soon}</div></div></div>
+  grid.innerHTML = T[lang].portfolio.map((p, i) => {
+    const chip = p.chipClass === 'dev'
+      ? `<span class="port-chip port-chip--dev"><span class="chip-dot"></span>${p.chip}</span>`
+      : `<span class="port-chip">${p.chip}</span>`;
+    const preview = p.icon
+      ? `<div style="width:72px;height:72px;filter:drop-shadow(0 0 18px rgba(6,182,212,.35));">${p.icon}</div>`
+      : `<span>${p.emoji}</span>`;
+    return `
+      <div class="port-card reveal d${i+1}">
+        <div class="port-prev">
+          ${preview}
+          <div class="port-prev-overlay">${chip}</div>
+        </div>
+        <div class="port-body">
+          <div class="port-cat">${p.cat}</div>
+          <div class="port-name">${p.name}</div>
+          <p class="port-desc">${p.desc}</p>
+          <div class="port-stack">${p.stack.map(s => `<span class="stack-pill">${s}</span>`).join('')}</div>
+          ${p.preview ? `<button class="btn-preview" onclick="openPosPreview()">Ver preview →</button>` : ''}
+        </div>
+      </div>`;
+  }).join('') + `
     <div class="port-card reveal d3"><div class="port-soon"><div class="port-soon-ico">🚀</div><div class="port-soon-txt">${soon}</div></div></div>
   `;
   observeReveal();
@@ -1250,6 +1529,42 @@ function initDeviceAnim() {
   shapes.forEach((sh, i) => sh.addEventListener('click', () => { cur = i; activate(i); }));
   labels.forEach((lb, i) => lb.addEventListener('click', () => { cur = i; activate(i); }));
 }
+
+/* ═══════════════════════════════════
+   POS PREVIEW MODAL
+═══════════════════════════════════ */
+function openPosPreview() {
+  document.getElementById('prevModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closePosPreview() {
+  document.getElementById('prevModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function goPosContact() {
+  closePosPreview();
+  setTimeout(() => {
+    document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
+    const sel = document.getElementById('srvSelect');
+    if (sel) {
+      const posOpt = Array.from(sel.options).find(o => o.value.toLowerCase().includes('pos'));
+      if (posOpt) sel.value = posOpt.value;
+    }
+  }, 350);
+}
+
+document.getElementById('prevClose').addEventListener('click', closePosPreview);
+document.getElementById('prevModal').addEventListener('click', function(e) {
+  if (e.target === this) closePosPreview();
+});
+document.querySelectorAll('.prev-tab').forEach(tab => {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.prev-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.prev-screen').forEach(s => s.classList.remove('active'));
+    this.classList.add('active');
+    document.getElementById('pscr' + this.dataset.tab).classList.add('active');
+  });
+});
 
 /* ═══════════════════════════════════
    BOOT
