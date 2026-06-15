@@ -51,11 +51,43 @@
     .reveal.d3  { transition-delay:.3s; }
     .reveal.d4  { transition-delay:.4s; }
 
+    /* ─── ANNOUNCEMENT BAR ─── */
+    .ann-bar {
+      position:fixed; top:0; left:0; right:0; z-index:300;
+      height:40px; background:linear-gradient(90deg, #1a2d5c 0%, #0f1e35 50%, #1a2d5c 100%);
+      border-bottom:1px solid rgba(6,182,212,.2);
+      display:flex; align-items:center; justify-content:center;
+      padding:0 40px; gap:10px; cursor:pointer;
+      transition:transform .4s var(--ease), opacity .4s var(--ease);
+    }
+    .ann-bar.hidden { transform:translateY(-100%); opacity:0; pointer-events:none; }
+    .ann-dot { width:7px; height:7px; border-radius:50%; background:#06b6d4; animation:pulse 1.8s infinite; flex-shrink:0; }
+    .ann-text { font-size:13px; font-weight:500; color:#e2e8f0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .ann-text span { color:#06b6d4; font-weight:700; }
+    .ann-cta {
+      font-size:12px; font-weight:700; color:#0d1117;
+      background:#06b6d4; border-radius:100px; padding:3px 12px;
+      flex-shrink:0; transition:filter .2s;
+    }
+    .ann-bar:hover .ann-cta { filter:brightness(1.15); }
+    .ann-close {
+      position:absolute; right:14px; top:50%; transform:translateY(-50%);
+      background:none; border:none; color:rgba(255,255,255,.35); font-size:16px;
+      cursor:pointer; padding:4px 6px; line-height:1; transition:color .2s;
+    }
+    .ann-close:hover { color:#fff; }
+    @media (max-width:600px) {
+      .ann-bar { padding:0 36px 0 16px; gap:7px; }
+      .ann-text { font-size:12px; }
+      .ann-cta { display:none; }
+    }
+
     /* ─── NAVBAR ─── */
     .nav {
-      position:fixed; top:0; left:0; right:0; z-index:200;
-      padding:20px 0; transition:background .4s var(--ease), padding .4s var(--ease), box-shadow .4s var(--ease);
+      position:fixed; top:40px; left:0; right:0; z-index:200;
+      padding:20px 0; transition:background .4s var(--ease), padding .4s var(--ease), box-shadow .4s var(--ease), top .4s var(--ease);
     }
+    .nav.ann-gone { top:0; }
     .nav.up {
       background:rgba(11,22,40,.96);
       backdrop-filter:blur(20px);
@@ -685,6 +717,16 @@
   </style>
 </head>
 <body>
+
+<!-- ═══ ANNOUNCEMENT BAR ═══ -->
+<div class="ann-bar" id="annBar" onclick="annClick(event)">
+  <div class="ann-dot"></div>
+  <div class="ann-text">
+    <span>Syntax POS</span> — Sistema de punto de venta offline-first en desarrollo
+  </div>
+  <div class="ann-cta">Ver preview →</div>
+  <button class="ann-close" id="annClose" aria-label="Cerrar">✕</button>
+</div>
 
 <!-- ═══ NAVBAR ═══ -->
 <nav class="nav" id="nav">
@@ -1538,6 +1580,15 @@ function initDeviceAnim() {
 }
 
 /* ═══════════════════════════════════
+   ANNOUNCEMENT BAR
+═══════════════════════════════════ */
+function annClick(e) {
+  if (e.target.id === 'annClose') return;
+  document.getElementById('portafolio').scrollIntoView({ behavior:'smooth' });
+  setTimeout(openPosPreview, 600);
+}
+
+/* ═══════════════════════════════════
    POS PREVIEW MODAL
 ═══════════════════════════════════ */
 function openPosPreview() {
@@ -1580,6 +1631,19 @@ document.addEventListener('DOMContentLoaded', () => {
   applyLang();
   initCanvas();
   observeReveal();
+  // Announcement bar
+  const bar = document.getElementById('annBar');
+  const nav = document.getElementById('nav');
+  if (localStorage.getItem('ann_closed')) {
+    bar.classList.add('hidden');
+    nav.classList.add('ann-gone');
+  }
+  document.getElementById('annClose').addEventListener('click', function(e) {
+    e.stopPropagation();
+    bar.classList.add('hidden');
+    nav.classList.add('ann-gone');
+    localStorage.setItem('ann_closed', '1');
+  });
 });
 </script>
 </body>
