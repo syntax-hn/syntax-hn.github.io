@@ -1024,24 +1024,9 @@
       <div class="prev-sub">Sistema de punto de venta offline-first para negocios en Honduras</div>
     </div>
     <div class="prev-tabs">
-      <button class="prev-tab active" data-tab="0">🔐 Login</button>
-      <button class="prev-tab" data-tab="1">🗂 Catálogo</button>
+      <button class="prev-tab active" data-tab="1">🗂 Catálogo</button>
       <button class="prev-tab" data-tab="2">🛒 Proceso de venta</button>
       <button class="prev-tab" data-tab="3">📱 Vista móvil</button>
-    </div>
-
-    <!-- Tab 0: Login -->
-    <div class="prev-screen active" id="pscr0">
-      <div class="laptop-wrap">
-        <div class="laptop-frame">
-          <div class="laptop-cam"><div class="laptop-cam-dot"></div></div>
-          <div class="laptop-screen" style="height:340px;">
-            <video src="login.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;"></video>
-          </div>
-          <div class="laptop-base"></div>
-        </div>
-        <div class="laptop-foot"></div>
-      </div>
     </div>
 
     <!-- Tab 1: Catálogo -->
@@ -1185,12 +1170,12 @@ const T = {
     'footer.copy':   '© 2025 <span class="acc">Syntax System Development</span>. Hecho en Honduras',
     'port.soon':     'Próximamente',
     tw: ['que transforma negocios.', 'hecho a tu medida.', 'que escala contigo.', 'que realmente funciona.'],
-    srvOpts: ['Selecciona un servicio','Sistema a medida','Aplicación web','Base de datos','Consultoría TI','Sistema POS','Otro'],
+    srvOpts: ['Selecciona un servicio','Sistema a medida','Aplicación web','Base de datos','Software Multi-Negocio','Sistema POS','Sistema RRHH','Sistema de Rentas','Otro'],
     services: [
       { name:'Sistemas a Medida',       desc:'Desarrollamos sistemas de control, ERP y módulos específicos diseñados exactamente para tu negocio.',      tags:['A tu medida','Escalable'],          ico:'monitor'   },
       { name:'Desarrollo Web',          desc:'Aplicaciones web modernas, dashboards interactivos y portales adaptados al flujo real de tu empresa.',       tags:['Moderno','Eficiente'],              ico:'globe'     },
       { name:'Diseño de Base de Datos', desc:'Modelado, optimización y migración de bases de datos relacionales. Arquitectura limpia desde el inicio.',    tags:['Segura','Optimizada'],              ico:'database'  },
-      { name:'Consultoría TI',          desc:'Análisis de procesos, arquitectura de software y guía tecnológica para tomar las decisiones que importan.',  tags:['Estratégico','Personalizado'],      ico:'lightbulb' },
+      { name:'Software Multi-Negocio',   desc:'Un solo sistema para todas tus sucursales. Datos separados por negocio, acceso centralizado y control total desde un mismo lugar.',  tags:['Multi-sucursal','SaaS','Centralizado'],  ico:'multibiz' },
       { name:'Tu sistema, en cualquier pantalla', desc:'Los sistemas que construimos son 100% responsivos. Se adaptan automáticamente a cualquier pantalla — computadora, tablet o celular — sin instalar nada adicional.', tags:['Escritorio','Tablet','Celular'], ico:'responsive', featured:true }
     ],
     process: [
@@ -1201,7 +1186,9 @@ const T = {
     ],
     portfolio: [
       // { cat:'Sistema de gestión empresarial', name:'Cimienta', desc:'Sistema completo de control para empresa de materiales de construcción: ventas, préstamos, costos, maquinaria y reportes.', stack:['Laravel','Vue 3','PostgreSQL','Docker'], emoji:'🏗️', chip:'Honduras' },
-      { cat:'Sistema POS SaaS · Punto de venta', name:'Syntax POS', desc:'Sistema de punto de venta multi-negocio con modo offline. Funciona sin internet, sincroniza automáticamente al reconectar y se adapta a cualquier pantalla.', stack:['Tiendas','Ferreterías','Supermercados','Abarroterías','Repuestos'], icon:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="#18181B"/><rect x="9" y="9" width="9" height="9" rx="2.5" fill="#06B6D4"/><rect x="22" y="9" width="9" height="9" rx="2.5" fill="rgba(255,255,255,0.20)"/><rect x="9" y="22" width="9" height="9" rx="2.5" fill="rgba(255,255,255,0.12)"/><rect x="22" y="22" width="9" height="9" rx="2.5" fill="#06B6D4" opacity="0.5"/></svg>', chip:'Próximamente', chipClass:'dev', preview:true }
+      { cat:'Sistema POS SaaS · Punto de venta', name:'Syntax POS', desc:'Sistema de punto de venta multi-negocio con modo offline. Funciona sin internet, sincroniza automáticamente al reconectar y se adapta a cualquier pantalla.', stack:['Tiendas','Ferreterías','Supermercados','Abarroterías','Repuestos'], icon:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 130" width="160" height="69"><defs><linearGradient id="pcGr" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#06B6D4"/><stop offset="100%" stop-color="#22D3EE"/></linearGradient></defs><g transform="translate(10,18)"><path d="M8,8 L20,8 L32,56 L76,56 L84,24 L28,24" fill="none" stroke="url(#pcGr)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="40" cy="68" r="4.5" fill="none" stroke="#06B6D4" stroke-width="2.2"/><circle cx="70" cy="68" r="4.5" fill="none" stroke="#06B6D4" stroke-width="2.2"/></g><line x1="110" y1="24" x2="110" y2="100" stroke="#06B6D4" stroke-width="1" opacity="0.15"/><text x="202" y="56" text-anchor="middle" font-family="Inter,system-ui" font-size="42" font-weight="800" letter-spacing="10" fill="#e2e8f0">POS</text><line x1="140" y1="66" x2="264" y2="66" stroke="#06B6D4" stroke-width="1.2" opacity="0.3"/><text x="202" y="86" text-anchor="middle" font-family="Inter,system-ui" font-size="14" font-weight="600" letter-spacing="10" fill="#06B6D4">S Y N T A X</text></svg>', chip:'Próximamente', chipClass:'dev', preview:true },
+      { cat:'Sistema RRHH SaaS · Recursos Humanos', name:'Syntax RRHH', desc:'Gestión integral de empleados, planillas, vacaciones, permisos, control de marcaje y evaluaciones de desempeño. Control total del talento humano de tu empresa.', stack:['Empresas','Comercios','Industrias','ONG','Gobierno'], icon:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 130" width="160" height="69"><defs><linearGradient id="hrGr" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#D4A017"/><stop offset="100%" stop-color="#F0C040"/></linearGradient></defs><g transform="translate(10,18)"><circle cx="38" cy="20" r="11" fill="none" stroke="url(#hrGr)" stroke-width="2.8"/><path d="M16,68 C16,46 26,36 38,36 C50,36 60,46 60,68" fill="none" stroke="url(#hrGr)" stroke-width="2.8" stroke-linecap="round"/><circle cx="66" cy="26" r="8" fill="none" stroke="#D4A017" stroke-width="2" opacity="0.4"/><path d="M50,68 C50,50 56,42 66,42 C76,42 82,50 82,68" fill="none" stroke="#D4A017" stroke-width="2" opacity="0.4" stroke-linecap="round"/></g><line x1="110" y1="24" x2="110" y2="100" stroke="#D4A017" stroke-width="1" opacity="0.15"/><text x="205" y="56" text-anchor="middle" font-family="Inter,system-ui" font-size="38" font-weight="800" letter-spacing="6" fill="#e2e8f0">RRHH</text><line x1="140" y1="66" x2="270" y2="66" stroke="#D4A017" stroke-width="1.2" opacity="0.3"/><text x="205" y="86" text-anchor="middle" font-family="Inter,system-ui" font-size="14" font-weight="600" letter-spacing="10" fill="#D4A017">S Y N T A X</text></svg>', chip:'Próximamente', chipClass:'dev' },
+      { cat:'Sistema de Rentas SaaS · Alquileres', name:'Syntax RENT', desc:'Control de propiedades en alquiler, contratos, cobros mensuales, morosos y mantenimiento. Toda tu cartera de inmuebles en un solo sistema.', stack:['Bienes raíces','Apartamentos','Locales','Oficinas','Bodegas'], icon:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 130" width="160" height="69"><defs><linearGradient id="rtGr" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#10B981"/><stop offset="100%" stop-color="#34D399"/></linearGradient></defs><g transform="translate(10,18)"><path d="M45,28 L12,52 L18,52 L18,72 L72,72 L72,52 L78,52 Z" fill="none" stroke="url(#rtGr)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="34" y="52" width="14" height="20" rx="1" fill="none" stroke="#10B981" stroke-width="2" opacity="0.5"/><rect x="54" y="42" width="10" height="10" rx="1" fill="none" stroke="#10B981" stroke-width="2" opacity="0.4"/></g><line x1="110" y1="24" x2="110" y2="100" stroke="#10B981" stroke-width="1" opacity="0.15"/><text x="205" y="56" text-anchor="middle" font-family="Inter,system-ui" font-size="38" font-weight="800" letter-spacing="6" fill="#e2e8f0">RENT</text><line x1="140" y1="66" x2="270" y2="66" stroke="#10B981" stroke-width="1.2" opacity="0.3"/><text x="205" y="86" text-anchor="middle" font-family="Inter,system-ui" font-size="14" font-weight="600" letter-spacing="10" fill="#10B981">S Y N T A X</text></svg>', chip:'Próximamente', chipClass:'dev' }
     ]
   },
   en: {
@@ -1256,12 +1243,12 @@ const T = {
     'footer.copy':   '© 2025 <span class="acc">Syntax System Development</span>. Made in Honduras',
     'port.soon':     'Coming soon',
     tw: ['that transforms businesses.', 'built just for you.', 'that scales with you.', 'that actually works.'],
-    srvOpts: ['Select a service','Custom system','Web application','Database design','IT consulting','POS System','Other'],
+    srvOpts: ['Select a service','Custom system','Web application','Database design','Multi-Business Software','POS System','HR System','Rental System','Other'],
     services: [
       { name:'Custom Systems',          desc:'We build control systems, ERPs and specific modules designed exactly for your business needs.',                tags:['Tailored','Scalable'],               ico:'monitor'   },
       { name:'Web Development',         desc:'Modern web applications, interactive dashboards and portals adapted to your company\'s real workflow.',        tags:['Modern','Efficient'],               ico:'globe'     },
       { name:'Database Design',         desc:'Relational database modeling, optimization and migration. Clean architecture from the very start.',            tags:['Secure','Optimized'],               ico:'database'  },
-      { name:'IT Consulting',           desc:'Process analysis, software architecture and technology guidance for decisions that truly matter.',             tags:['Strategic','Personalized'],         ico:'lightbulb' },
+      { name:'Multi-Business Software',  desc:'One system for all your locations. Data separated by business, centralized access and full control from a single place.',  tags:['Multi-location','SaaS','Centralized'],  ico:'multibiz' },
       { name:'Your system, on any screen', desc:'Every system we build is fully responsive. It adapts automatically to any screen — desktop, tablet or phone — with no app to install.', tags:['Desktop','Tablet','Mobile'], ico:'responsive', featured:true }
     ],
     process: [
@@ -1272,7 +1259,9 @@ const T = {
     ],
     portfolio: [
       // { cat:'Business management system', name:'Cimienta', desc:'Complete control system for a construction materials company: sales, loans, costs, machinery and reports.', stack:['Laravel','Vue 3','PostgreSQL','Docker'], emoji:'🏗️', chip:'Honduras' },
-      { cat:'SaaS POS System · Point of sale', name:'Syntax POS', desc:'Multi-tenant point of sale system with offline mode. Works without internet, syncs automatically on reconnect and adapts to any screen.', stack:['Retail stores','Hardware stores','Supermarkets','Grocery stores','Auto parts'], icon:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="#18181B"/><rect x="9" y="9" width="9" height="9" rx="2.5" fill="#06B6D4"/><rect x="22" y="9" width="9" height="9" rx="2.5" fill="rgba(255,255,255,0.20)"/><rect x="9" y="22" width="9" height="9" rx="2.5" fill="rgba(255,255,255,0.12)"/><rect x="22" y="22" width="9" height="9" rx="2.5" fill="#06B6D4" opacity="0.5"/></svg>', chip:'Coming soon', chipClass:'dev', preview:true }
+      { cat:'SaaS POS System · Point of sale', name:'Syntax POS', desc:'Multi-tenant point of sale system with offline mode. Works without internet, syncs automatically on reconnect and adapts to any screen.', stack:['Retail stores','Hardware stores','Supermarkets','Grocery stores','Auto parts'], icon:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 130" width="160" height="69"><defs><linearGradient id="pcGr2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#06B6D4"/><stop offset="100%" stop-color="#22D3EE"/></linearGradient></defs><g transform="translate(10,18)"><path d="M8,8 L20,8 L32,56 L76,56 L84,24 L28,24" fill="none" stroke="url(#pcGr2)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="40" cy="68" r="4.5" fill="none" stroke="#06B6D4" stroke-width="2.2"/><circle cx="70" cy="68" r="4.5" fill="none" stroke="#06B6D4" stroke-width="2.2"/></g><line x1="110" y1="24" x2="110" y2="100" stroke="#06B6D4" stroke-width="1" opacity="0.15"/><text x="202" y="56" text-anchor="middle" font-family="Inter,system-ui" font-size="42" font-weight="800" letter-spacing="10" fill="#e2e8f0">POS</text><line x1="140" y1="66" x2="264" y2="66" stroke="#06B6D4" stroke-width="1.2" opacity="0.3"/><text x="202" y="86" text-anchor="middle" font-family="Inter,system-ui" font-size="14" font-weight="600" letter-spacing="10" fill="#06B6D4">S Y N T A X</text></svg>', chip:'Coming soon', chipClass:'dev', preview:true },
+      { cat:'SaaS HR System · Human Resources', name:'Syntax RRHH', desc:'Complete employee management, payroll, vacations, permits, time & attendance tracking and performance reviews. Full control of your company\'s human talent.', stack:['Companies','Retail','Industry','NGOs','Government'], icon:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 130" width="160" height="69"><defs><linearGradient id="hrGr" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#D4A017"/><stop offset="100%" stop-color="#F0C040"/></linearGradient></defs><g transform="translate(10,18)"><circle cx="38" cy="20" r="11" fill="none" stroke="url(#hrGr)" stroke-width="2.8"/><path d="M16,68 C16,46 26,36 38,36 C50,36 60,46 60,68" fill="none" stroke="url(#hrGr)" stroke-width="2.8" stroke-linecap="round"/><circle cx="66" cy="26" r="8" fill="none" stroke="#D4A017" stroke-width="2" opacity="0.4"/><path d="M50,68 C50,50 56,42 66,42 C76,42 82,50 82,68" fill="none" stroke="#D4A017" stroke-width="2" opacity="0.4" stroke-linecap="round"/></g><line x1="110" y1="24" x2="110" y2="100" stroke="#D4A017" stroke-width="1" opacity="0.15"/><text x="205" y="56" text-anchor="middle" font-family="Inter,system-ui" font-size="38" font-weight="800" letter-spacing="6" fill="#e2e8f0">RRHH</text><line x1="140" y1="66" x2="270" y2="66" stroke="#D4A017" stroke-width="1.2" opacity="0.3"/><text x="205" y="86" text-anchor="middle" font-family="Inter,system-ui" font-size="14" font-weight="600" letter-spacing="10" fill="#D4A017">S Y N T A X</text></svg>', chip:'Coming soon', chipClass:'dev' },
+      { cat:'SaaS Rental System · Property Management', name:'Syntax RENT', desc:'Rental property control, contracts, monthly billing, overdue tracking and maintenance. Your entire real estate portfolio in one system.', stack:['Real estate','Apartments','Retail spaces','Offices','Warehouses'], icon:'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 130" width="160" height="69"><defs><linearGradient id="rtGr2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#10B981"/><stop offset="100%" stop-color="#34D399"/></linearGradient></defs><g transform="translate(10,18)"><path d="M45,28 L12,52 L18,52 L18,72 L72,72 L72,52 L78,52 Z" fill="none" stroke="url(#rtGr2)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="34" y="52" width="14" height="20" rx="1" fill="none" stroke="#10B981" stroke-width="2" opacity="0.5"/><rect x="54" y="42" width="10" height="10" rx="1" fill="none" stroke="#10B981" stroke-width="2" opacity="0.4"/></g><line x1="110" y1="24" x2="110" y2="100" stroke="#10B981" stroke-width="1" opacity="0.15"/><text x="205" y="56" text-anchor="middle" font-family="Inter,system-ui" font-size="38" font-weight="800" letter-spacing="6" fill="#e2e8f0">RENT</text><line x1="140" y1="66" x2="270" y2="66" stroke="#10B981" stroke-width="1.2" opacity="0.3"/><text x="205" y="86" text-anchor="middle" font-family="Inter,system-ui" font-size="14" font-weight="600" letter-spacing="10" fill="#10B981">S Y N T A X</text></svg>', chip:'Coming soon', chipClass:'dev' }
     ]
   }
 };
@@ -1285,7 +1274,8 @@ const ICO = {
   globe:     `<svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" width="24" height="24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg>`,
   database:  `<svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" width="24" height="24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>`,
   mobile:    `<svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" width="24" height="24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>`,
-  lightbulb: `<svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" width="24" height="24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/></svg>`
+  lightbulb: `<svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" width="24" height="24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z"/></svg>`,
+  multibiz:  `<svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" width="24" height="24"><rect x="2" y="7" width="8" height="13" rx="1"/><rect x="14" y="3" width="8" height="17" rx="1"/><line x1="10" y1="13" x2="14" y2="13" stroke-dasharray="1.5 1.5"/><line x1="5" y1="10" x2="7" y2="10"/><line x1="5" y1="13" x2="7" y2="13"/><line x1="5" y1="16" x2="7" y2="16"/><line x1="17" y1="6" x2="19" y2="6"/><line x1="17" y1="9" x2="19" y2="9"/><line x1="17" y1="12" x2="19" y2="12"/><line x1="17" y1="15" x2="19" y2="15"/></svg>`
 };
 
 /* ═══════════════════════════════════
@@ -1392,7 +1382,7 @@ function renderPortfolio() {
       ? `<span class="port-chip port-chip--dev"><span class="chip-dot"></span>${p.chip}</span>`
       : `<span class="port-chip">${p.chip}</span>`;
     const preview = p.icon
-      ? `<div style="width:72px;height:72px;filter:drop-shadow(0 0 18px rgba(6,182,212,.35));">${p.icon}</div>`
+      ? `<div style="filter:drop-shadow(0 0 18px rgba(6,182,212,.35));">${p.icon}</div>`
       : `<span>${p.emoji}</span>`;
     return `
       <div class="port-card reveal d${i+1}">
@@ -1408,9 +1398,7 @@ function renderPortfolio() {
           ${p.preview ? `<button class="btn-preview" onclick="openPosPreview()">Ver preview →</button>` : ''}
         </div>
       </div>`;
-  }).join('') + `
-    <div class="port-card reveal d3"><div class="port-soon"><div class="port-soon-ico">🚀</div><div class="port-soon-txt">${soon}</div></div></div>
-  `;
+  }).join('');
   observeReveal();
 }
 
