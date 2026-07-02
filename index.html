@@ -121,7 +121,7 @@
     }
     .logo-badge {
       width:44px; height:44px; border-radius:50%; flex-shrink:0;
-      background:radial-gradient(circle at 38% 32%, var(--navy-l), var(--bg));
+      background:transparent;
       border:1.5px solid rgba(var(--accent-r),var(--accent-g),var(--accent-b),.55);
       box-shadow:0 0 10px rgba(var(--accent-r),var(--accent-g),var(--accent-b),.3), 0 0 22px rgba(var(--accent-r),var(--accent-g),var(--accent-b),.12);
       display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1px;
@@ -132,8 +132,8 @@
       box-shadow:0 0 18px rgba(var(--accent-r),var(--accent-g),var(--accent-b),.55), 0 0 40px rgba(var(--accent-r),var(--accent-g),var(--accent-b),.2);
       transform:scale(1.06);
     }
-    .lb-icon { font-family:var(--fh); font-size:13px; font-weight:700; color:var(--accent); line-height:1; letter-spacing:-.5px; }
-    .lb-name { font-family:var(--fh); font-size:7px; font-weight:700; color:var(--white); letter-spacing:1.5px; line-height:1; }
+    .lb-icon { font-family:var(--fh); font-size:13px; font-weight:700; color:var(--accent); line-height:1; letter-spacing:-.5px; position:relative; z-index:1; }
+    .lb-name { font-family:var(--fh); font-size:7px; font-weight:700; color:var(--white); letter-spacing:1.5px; line-height:1; position:relative; z-index:1; }
     .logo-text { display:flex; flex-direction:column; line-height:1.1; }
     .logo-name { font-family:var(--fh); font-size:15px; font-weight:700; color:var(--white); letter-spacing:.8px; }
     .logo-sub  { font-size:8.5px; font-weight:600; color:var(--muted); letter-spacing:2px; text-transform:uppercase; }
@@ -141,19 +141,26 @@
     .hero-logo { margin-bottom:32px; animation:fadeDown .8s var(--ease) both; }
     .hero-logo-badge {
       width:138px; height:138px; border-radius:50%;
-      background:radial-gradient(circle at 38% 32%, var(--navy-l), var(--bg));
-      border:2px solid rgba(var(--accent-r),var(--accent-g),var(--accent-b),.6);
-      box-shadow:0 0 32px rgba(var(--accent-r),var(--accent-g),var(--accent-b),.6), 0 0 65px rgba(var(--accent-r),var(--accent-g),var(--accent-b),.28);
+      background:transparent;
+      border:2px solid rgba(var(--accent-r),var(--accent-g),var(--accent-b),.5);
+      box-shadow:0 0 32px rgba(var(--accent-r),var(--accent-g),var(--accent-b),.55), 0 0 65px rgba(var(--accent-r),var(--accent-g),var(--accent-b),.25);
       display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px;
-      animation:heroGlow 3s ease-in-out 1s infinite;
+      position:relative; overflow:hidden;
     }
-    @keyframes heroGlow {
-      0%,100% { box-shadow:0 0 32px rgba(var(--accent-r),var(--accent-g),var(--accent-b),.6), 0 0 65px rgba(var(--accent-r),var(--accent-g),var(--accent-b),.28); border-color:rgba(var(--accent-r),var(--accent-g),var(--accent-b),.6); }
-      50%      { box-shadow:0 0 48px rgba(var(--accent-r),var(--accent-g),var(--accent-b),.9), 0 0 90px rgba(var(--accent-r),var(--accent-g),var(--accent-b),.45); border-color:rgba(var(--accent-r),var(--accent-g),var(--accent-b),.9); }
+    .hero-logo-badge::before {
+      content:''; position:absolute; inset:0; z-index:0;
+      background:linear-gradient(110deg, transparent 25%, rgba(255,255,255,.14) 50%, transparent 75%);
+      transform:translateX(-160%) skewX(-10deg);
+      animation:badgeSweep 3.5s ease-in-out 1s infinite;
     }
-    .hlb-icon { font-family:var(--fh); font-size:46px; font-weight:700; color:var(--accent); line-height:1; letter-spacing:-1px; }
-    .hlb-name { font-family:var(--fh); font-size:17px; font-weight:700; color:var(--white); letter-spacing:3.5px; line-height:1; }
-    .hlb-sub  { font-size:7px; font-weight:600; color:var(--muted); letter-spacing:2.5px; text-transform:uppercase; }
+    @keyframes badgeSweep {
+      0%   { transform:translateX(-160%) skewX(-10deg); }
+      45%  { transform:translateX(260%) skewX(-10deg); }
+      100% { transform:translateX(260%) skewX(-10deg); }
+    }
+    .hlb-icon { font-family:var(--fh); font-size:46px; font-weight:700; color:var(--accent); line-height:1; letter-spacing:-1px; position:relative; z-index:1; }
+    .hlb-name { font-family:var(--fh); font-size:17px; font-weight:700; color:var(--white); letter-spacing:3.5px; line-height:1; position:relative; z-index:1; }
+    .hlb-sub  { font-size:7px; font-weight:600; color:var(--muted); letter-spacing:2.5px; text-transform:uppercase; position:relative; z-index:1; }
     .nav-links { display:flex; align-items:center; gap:34px; }
     .nav-links a {
       text-decoration:none; font-size:14px; font-weight:500; color:var(--muted);
