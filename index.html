@@ -119,25 +119,41 @@
     .logo {
       display:flex; align-items:center; gap:10px; text-decoration:none; flex-shrink:0;
     }
-    .logo-img {
-      height:44px; width:44px; border-radius:50%; object-fit:cover;
-      transition:transform .3s, filter .3s;
-      filter:drop-shadow(0 0 6px rgba(200,75,47,.5));
+    .logo-badge {
+      width:44px; height:44px; border-radius:50%; flex-shrink:0;
+      background:radial-gradient(circle at 38% 32%, var(--navy-l), var(--bg));
+      border:1.5px solid rgba(var(--accent-r),var(--accent-g),var(--accent-b),.55);
+      box-shadow:0 0 10px rgba(var(--accent-r),var(--accent-g),var(--accent-b),.3), 0 0 22px rgba(var(--accent-r),var(--accent-g),var(--accent-b),.12);
+      display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1px;
+      transition:box-shadow .4s, border-color .4s, transform .3s;
     }
-    .logo:hover .logo-img {
-      transform:scale(1.08);
-      filter:drop-shadow(0 0 12px rgba(200,75,47,.8));
+    .logo:hover .logo-badge {
+      border-color:rgba(var(--accent-r),var(--accent-g),var(--accent-b),.9);
+      box-shadow:0 0 18px rgba(var(--accent-r),var(--accent-g),var(--accent-b),.55), 0 0 40px rgba(var(--accent-r),var(--accent-g),var(--accent-b),.2);
+      transform:scale(1.06);
     }
-    .hero-logo { margin-bottom:28px; animation:fadeDown .8s var(--ease) both; }
-    .hero-logo-img {
-      width:140px; height:140px; border-radius:50%; object-fit:cover;
-      filter:drop-shadow(0 0 22px rgba(200,75,47,.75)) drop-shadow(0 0 50px rgba(200,75,47,.35));
+    .lb-icon { font-family:var(--fh); font-size:13px; font-weight:700; color:var(--accent); line-height:1; letter-spacing:-.5px; }
+    .lb-name { font-family:var(--fh); font-size:7px; font-weight:700; color:var(--white); letter-spacing:1.5px; line-height:1; }
+    .logo-text { display:flex; flex-direction:column; line-height:1.1; }
+    .logo-name { font-family:var(--fh); font-size:15px; font-weight:700; color:var(--white); letter-spacing:.8px; }
+    .logo-sub  { font-size:8.5px; font-weight:600; color:var(--muted); letter-spacing:2px; text-transform:uppercase; }
+
+    .hero-logo { margin-bottom:32px; animation:fadeDown .8s var(--ease) both; }
+    .hero-logo-badge {
+      width:138px; height:138px; border-radius:50%;
+      background:radial-gradient(circle at 38% 32%, var(--navy-l), var(--bg));
+      border:2px solid rgba(var(--accent-r),var(--accent-g),var(--accent-b),.6);
+      box-shadow:0 0 32px rgba(var(--accent-r),var(--accent-g),var(--accent-b),.6), 0 0 65px rgba(var(--accent-r),var(--accent-g),var(--accent-b),.28);
+      display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px;
       animation:heroGlow 3s ease-in-out 1s infinite;
     }
     @keyframes heroGlow {
-      0%,100% { filter:drop-shadow(0 0 22px rgba(200,75,47,.75)) drop-shadow(0 0 50px rgba(200,75,47,.35)); }
-      50%      { filter:drop-shadow(0 0 34px rgba(200,75,47,1))   drop-shadow(0 0 70px rgba(200,75,47,.55)); }
+      0%,100% { box-shadow:0 0 32px rgba(var(--accent-r),var(--accent-g),var(--accent-b),.6), 0 0 65px rgba(var(--accent-r),var(--accent-g),var(--accent-b),.28); border-color:rgba(var(--accent-r),var(--accent-g),var(--accent-b),.6); }
+      50%      { box-shadow:0 0 48px rgba(var(--accent-r),var(--accent-g),var(--accent-b),.9), 0 0 90px rgba(var(--accent-r),var(--accent-g),var(--accent-b),.45); border-color:rgba(var(--accent-r),var(--accent-g),var(--accent-b),.9); }
     }
+    .hlb-icon { font-family:var(--fh); font-size:46px; font-weight:700; color:var(--accent); line-height:1; letter-spacing:-1px; }
+    .hlb-name { font-family:var(--fh); font-size:17px; font-weight:700; color:var(--white); letter-spacing:3.5px; line-height:1; }
+    .hlb-sub  { font-size:7px; font-weight:600; color:var(--muted); letter-spacing:2.5px; text-transform:uppercase; }
     .nav-links { display:flex; align-items:center; gap:34px; }
     .nav-links a {
       text-decoration:none; font-size:14px; font-weight:500; color:var(--muted);
@@ -771,7 +787,14 @@
 <nav class="nav" id="nav">
   <div class="container nav-inner">
     <a class="logo" href="#">
-      <img src="LOGO%20SYNTAX.png" class="logo-img" alt="Syntax System Development" />
+      <div class="logo-badge">
+        <span class="lb-icon">&lt;/&gt;</span>
+        <span class="lb-name">SYNTAX</span>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">SYNTAX</span>
+        <span class="logo-sub">System Development</span>
+      </div>
     </a>
     <div class="nav-links">
       <a href="#servicios"  data-i18n="nav.services">Servicios</a>
@@ -815,7 +838,11 @@
   <div class="glow"></div>
   <div class="hero-body">
     <div class="hero-logo">
-      <img src="LOGO%20SYNTAX.png" class="hero-logo-img" alt="Syntax System Development" />
+      <div class="hero-logo-badge">
+        <span class="hlb-icon">&lt;/&gt;</span>
+        <span class="hlb-name">SYNTAX</span>
+        <span class="hlb-sub">System Development</span>
+      </div>
     </div>
     <h1 class="hero-h1">
       <span data-i18n="hero.pre">Construimos</span>
@@ -1002,7 +1029,14 @@
   <div class="container">
     <div class="footer-top">
       <a class="logo" href="#">
-        <img src="LOGO%20SYNTAX.png" class="logo-img" alt="Syntax System Development" style="height:52px;width:52px;" />
+        <div class="logo-badge" style="width:50px;height:50px;">
+          <span class="lb-icon" style="font-size:15px;">&lt;/&gt;</span>
+          <span class="lb-name"  style="font-size:8px;">SYNTAX</span>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">SYNTAX</span>
+          <span class="logo-sub">System Development</span>
+        </div>
       </a>
       <div class="footer-links">
         <a href="#servicios"  data-i18n="nav.services">Servicios</a>
