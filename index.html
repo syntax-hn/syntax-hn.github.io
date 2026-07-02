@@ -119,12 +119,25 @@
     .logo {
       display:flex; align-items:center; gap:10px; text-decoration:none; flex-shrink:0;
     }
-    .logo-bracket {
-      font-family:var(--fh); font-size:20px; font-weight:700; color:var(--accent); line-height:1;
+    .logo-img {
+      height:44px; width:44px; border-radius:50%; object-fit:cover;
+      transition:transform .3s, filter .3s;
+      filter:drop-shadow(0 0 6px rgba(200,75,47,.5));
     }
-    .logo-text { display:flex; flex-direction:column; line-height:1.1; }
-    .logo-name { font-family:var(--fh); font-size:15px; font-weight:700; color:var(--white); letter-spacing:.8px; }
-    .logo-sub  { font-size:8.5px; font-weight:600; color:var(--muted); letter-spacing:2px; text-transform:uppercase; }
+    .logo:hover .logo-img {
+      transform:scale(1.08);
+      filter:drop-shadow(0 0 12px rgba(200,75,47,.8));
+    }
+    .hero-logo { margin-bottom:28px; animation:fadeDown .8s var(--ease) both; }
+    .hero-logo-img {
+      width:140px; height:140px; border-radius:50%; object-fit:cover;
+      filter:drop-shadow(0 0 22px rgba(200,75,47,.75)) drop-shadow(0 0 50px rgba(200,75,47,.35));
+      animation:heroGlow 3s ease-in-out 1s infinite;
+    }
+    @keyframes heroGlow {
+      0%,100% { filter:drop-shadow(0 0 22px rgba(200,75,47,.75)) drop-shadow(0 0 50px rgba(200,75,47,.35)); }
+      50%      { filter:drop-shadow(0 0 34px rgba(200,75,47,1))   drop-shadow(0 0 70px rgba(200,75,47,.55)); }
+    }
     .nav-links { display:flex; align-items:center; gap:34px; }
     .nav-links a {
       text-decoration:none; font-size:14px; font-weight:500; color:var(--muted);
@@ -758,11 +771,7 @@
 <nav class="nav" id="nav">
   <div class="container nav-inner">
     <a class="logo" href="#">
-      <span class="logo-bracket">&lt;/&gt;</span>
-      <div class="logo-text">
-        <span class="logo-name">SYNTAX</span>
-        <span class="logo-sub">System Development</span>
-      </div>
+      <img src="LOGO%20SYNTAX.png" class="logo-img" alt="Syntax System Development" />
     </a>
     <div class="nav-links">
       <a href="#servicios"  data-i18n="nav.services">Servicios</a>
@@ -805,9 +814,9 @@
   <canvas id="canvas"></canvas>
   <div class="glow"></div>
   <div class="hero-body">
-    <!-- <div class="hero-pill">
-      <span data-i18n="hero.badge">Honduras · Centroamérica</span>
-    </div> -->
+    <div class="hero-logo">
+      <img src="LOGO%20SYNTAX.png" class="hero-logo-img" alt="Syntax System Development" />
+    </div>
     <h1 class="hero-h1">
       <span data-i18n="hero.pre">Construimos</span>
       <span class="acc" data-i18n="hero.mid"> software</span>
@@ -993,11 +1002,7 @@
   <div class="container">
     <div class="footer-top">
       <a class="logo" href="#">
-        <span class="logo-bracket">&lt;/&gt;</span>
-        <div class="logo-text">
-          <span class="logo-name">SYNTAX</span>
-          <span class="logo-sub">System Development</span>
-        </div>
+        <img src="LOGO%20SYNTAX.png" class="logo-img" alt="Syntax System Development" style="height:52px;width:52px;" />
       </a>
       <div class="footer-links">
         <a href="#servicios"  data-i18n="nav.services">Servicios</a>
